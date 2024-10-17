@@ -1,0 +1,35 @@
+<h1>Buenas tardes, bienvenidos al programa {{title}} - {{conectado}}</h1>
+
+<div *ngIf="conectado">
+  <h2>Esto es un mensaje de prueba {{conectado}}</h2>
+</div>
+<ul>
+  <li *ngFor="let usuario of usuarios">
+    {{usuario}}
+  </li>
+</ul>
+
+<div style="text-align:center">
+  <h1>
+    Bienvenido a la aplicacion {{title}}!
+  </h1>
+  
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" [(ngModel)]="nombre" />
+
+    <label for="peso">Peso:</label>
+    <input type="number" id="peso" [(ngModel)]="peso" /> 
+    
+    <button (click)="crearPersona()">Crear Persona</button> 
+  </div>
+
+  <!-- mostrar datos de la persona -->
+  <div *ngIf="persona">
+    <h2>Persona creada:</h2>
+    <p>Nombre: {{persona.nombre}}</p>
+    <p>Peso: {{persona.peso}}</p> 
+
+    <button (click)="caminar()">Caminar</button>
+    <button (click)="comer()">Comer</button>
+  </div>
